@@ -9,18 +9,17 @@ public class PlayerController : MonoBehaviour {
 	public float movementSpeed;
 	public float turnSpeed;
 	public float rayLength;
-	public Text fwdCollision;
+	public Text fitnessText;
 
 	//Distances to nearest wall left, front left, front, front right, right
 	private float[] distances = {0,0,0,0,0};
+	private float fitness;
 
 
 	//Start is called on the first frame the script is active
 	void Start (){
-
-
+		fitness = 0;
 	}
-
 
 
 
@@ -68,7 +67,6 @@ public class PlayerController : MonoBehaviour {
 			if (Physics.Raycast (transform.position, feelers[i], out hit)) {
 				if (hit.collider.tag != "Player") {
 					distances[i] = Math.Min (hit.distance, rayLength);
-					fwdCollision.text = distances[2].ToString ();
 				}
 			}
 		}
@@ -124,7 +122,15 @@ public class PlayerController : MonoBehaviour {
 
 
 
-		
+
+		//Update Fitness Score
+		for (int i = 0; i < distances.Length; i++) {
+			fitness += distances [i]/10;
+		}
+		fitnessText.text = "Fitness: " + fitness.ToString ();
+
+
+
 	} //End of Update
 
 }
