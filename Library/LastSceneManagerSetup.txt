@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/_Scenes/MiniGame.unity
+- path: Assets/_Scenes/Smart Ball lvl 2.unity
   isLoaded: 1
   isActive: 1

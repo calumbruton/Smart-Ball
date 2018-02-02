@@ -1,17 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController2 : MonoBehaviour {
 
 	public float speed;
+	public Text countText;
 
 	private Rigidbody rb;
+	private int count;
 
 	//Start is called on the first frame the script is active
 	void Start ()
 	{
 		rb = GetComponent<Rigidbody>();
+		count = 0;
+		setCountText ();
 	}
 
 	//Fixed update is called just before rendering any physics calculations
@@ -25,8 +30,18 @@ public class PlayerController2 : MonoBehaviour {
 		rb.AddForce (movement * speed);
 	}
 
-	//Update is called before rendering a fram, this is where our game code will go
-	void Update ()
-	{}
+	void OnTriggerEnter (Collider other)
+	{
+		if (other.gameObject.CompareTag("Pick Up")){
+			other.gameObject.SetActive(false);
+			count += 1;
+			setCountText ();
+		}
+			
+	}
+
+	void setCountText(){
+		countText.text = "Count: " + count.ToString ();
+	}
 }
 
