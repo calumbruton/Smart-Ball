@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using NeuralNetwork;
 
 public class PlayerController : MonoBehaviour {
 
@@ -14,11 +15,13 @@ public class PlayerController : MonoBehaviour {
 	//Distances to nearest wall left, front left, front, front right, right
 	private float[] distances = {0,0,0,0,0};
 	private float fitness;
-
+	private NN brain;
 
 	//Start is called on the first frame the script is active
 	void Start (){
 		fitness = 0;
+		brain = new NN(); 
+
 	}
 
 
@@ -35,6 +38,13 @@ public class PlayerController : MonoBehaviour {
 	//Rotate the object in update and draw lines
 	void Update()
 	{
+
+
+		float output = this.brain.decision (distances);
+		print(output);
+		transform.Rotate (new Vector3 (0, output, 0) * Time.deltaTime * turnSpeed, Space.World);
+
+		/*
 		if (Input.GetKey (KeyCode.D)) {
 			//Rotate the sprite about the Y axis in the positive direction
 			transform.Rotate (new Vector3 (0, 1, 0) * Time.deltaTime * turnSpeed, Space.World);
@@ -44,7 +54,7 @@ public class PlayerController : MonoBehaviour {
 			//Rotate the sprite about the Y axis in the negative direction
 			transform.Rotate (new Vector3 (0, -1, 0) * Time.deltaTime * turnSpeed, Space.World);
 		}
-
+		*/
 	
 		//Stores the object that a raycast hits
 		RaycastHit hit;

@@ -180,6 +180,7 @@
 -define:UNITY_TEAM_LICENSE
 -define:CROSS_PLATFORM_INPUT
 'Assets/Scripts/cameraaa.cs'
+'Assets/Scripts/NN.cs'
 'Assets/Scripts/PlayerController.cs'
 'Assets/Scripts/PlayerController2.cs'
 'Assets/Scripts/Rotator.cs'
