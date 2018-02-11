@@ -42,10 +42,10 @@ public class PlayerController : MonoBehaviour {
 	{
 
 
-		float output = this.brain.decision (distances);
-		transform.Rotate (new Vector3 (0, output, 0) * Time.deltaTime * turnSpeed, Space.World);
+		//float output = this.brain.decision (distances);
+		//transform.Rotate (new Vector3 (0, output, 0) * Time.deltaTime * turnSpeed, Space.World);
 
-		/*
+
 		if (Input.GetKey (KeyCode.D)) {
 			//Rotate the sprite about the Y axis in the positive direction
 			transform.Rotate (new Vector3 (0, 1, 0) * Time.deltaTime * turnSpeed, Space.World);
@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour {
 			//Rotate the sprite about the Y axis in the negative direction
 			transform.Rotate (new Vector3 (0, -1, 0) * Time.deltaTime * turnSpeed, Space.World);
 		}
-		*/
+
 	
 		//Stores the object that a raycast hits
 		RaycastHit hit;
