@@ -175,7 +175,7 @@ public class MasterController : MonoBehaviour
 				//get the index of the elite from fitness scores, this is the same index as it's DNA
 				int loc = Array.IndexOf(fitness_scores, sorted_fitness[(sorted_fitness.Length-1)-i]);
 
-				print(sorted_fitness[(sorted_fitness.Length-1)-i] + "in location " + loc);
+				//print(sorted_fitness[(sorted_fitness.Length-1)-i] + "in location " + loc);
 
 				//Add the DNA of the elites to the new_DNA pool
 				new_DNA[(pop_size-1)-i] = DNA[loc];
