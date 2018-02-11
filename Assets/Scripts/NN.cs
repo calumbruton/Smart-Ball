@@ -1,29 +1,32 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 namespace NeuralNetwork
 {
 	public class NN
 	{
 		//The number of nodes in each layer
-		int inpt_nds = 5;
-		int hdn_nds = 5;
-		int outpt_nds = 1;
+		public static int inpt_nds = 5;
+		public static int hdn_nds = 5;
+		public static int outpt_nds = 1;
 
 		//DNA is a float array with hidden layer weights, hidden layer bias, output layer weights, output layer bias
-		float[] DNA;
+		public float[] DNA;
 
 		//inputs array for 5 distances
-		float[] inputs;
+		public float[] inputs;
 
 		//Weights for each connection - hidden layer and output layer - 2d Arrays
-		float [,] hl1_weights;
-		float[,] ol_weights;
+		private float [,] hl1_weights;
+		private float[,] ol_weights;
 
 		//Hidden layer and output layer bias
-		float [] bias_hl;
-		float [] bias_ol;
+		private float [] bias_hl;
+		private float [] bias_ol;
 
-		public NN ()
+		public NN (float[] DNA)
 		{
 			hl1_weights = new float[inpt_nds, hdn_nds];
 			bias_hl = new float[hdn_nds];
@@ -31,20 +34,11 @@ namespace NeuralNetwork
 			bias_ol = new float[outpt_nds];
 
 
-			//initialize the weights and bias randomly in the range 0 to 1 in this constructor for the DNA
-			Random random = new Random();
-			int DNA_length = (inpt_nds * hdn_nds) + hdn_nds + (hdn_nds * outpt_nds) + outpt_nds;
-			DNA = new float[DNA_length];
-
-			for (int i = 0; i < DNA_length; i++) {
-				DNA[i] = (float)(random.NextDouble()*2.0-1.0);
-
-			}
-
 			//Initialize the weights and bias arrays
 			InitWeights (DNA);
 
 		} //End of constructor
+
 
 
 		//Initialize the weights of the NN by reading the DNA

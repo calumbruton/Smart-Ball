@@ -10,20 +10,22 @@ public class PlayerController : MonoBehaviour {
 	public float movementSpeed;
 	public float turnSpeed;
 	public float rayLength;
-	public Text fitnessText;
+
+
+	//Need to access fitness and brain from Master Controller
+	public float fitness;
+	public NN brain;
 
 	//Distances to nearest wall left, front left, front, front right, right
 	private float[] distances = {0,0,0,0,0};
-	private float fitness;
-	private NN brain;
+
 
 	//Start is called on the first frame the script is active
 	void Start (){
 		fitness = 0;
-		brain = new NN(); 
+		//brain = new NN(); 
 
 	}
-
 
 
 	//Fixed update will constantly move the object forward in the Z direction that it is facing
@@ -41,7 +43,6 @@ public class PlayerController : MonoBehaviour {
 
 
 		float output = this.brain.decision (distances);
-		print(output);
 		transform.Rotate (new Vector3 (0, output, 0) * Time.deltaTime * turnSpeed, Space.World);
 
 		/*
@@ -137,9 +138,7 @@ public class PlayerController : MonoBehaviour {
 		for (int i = 0; i < distances.Length; i++) {
 			fitness += distances [i]/10;
 		}
-		fitnessText.text = "Fitness: " + fitness.ToString ();
-
-
+			
 
 	} //End of Update
 
