@@ -6,9 +6,9 @@ Smart Ball is a project I created in Unity that uses a neural network and a gene
 
 # The Brain (Neural Network)
 
-The program starts by initializing x number of training balls. Each one of these training balls is assigned a random DNA sequence that is used for the weights of the connections in its neural network (Its brain). The neural network takes 5 distances as inputs by using raycasts from the ball in which they are working for. These distances come from the left, forward-left, forward, forward-right, and right (picture below). Every frame the neural network of each ball will make a decision on how much the ball should rotate based on these 5 inputs and the DNA associated with the ball. 
+The program starts by initializing x number of training balls. Each one of these training balls is assigned a random DNA sequence that is used for the weights of the connections in its neural network (Its brain). The neural network takes 5 distances as inputs by using raycasts that are sent from the ball it is assigned to. The distance is the minimum of the closest object hit and a user specified distance. These distances come from the left, forward-left, forward, forward-right, and right (picture below). Every frame the neural network of each ball will make a decision on how much the ball should rotate based on these 5 inputs. If the ball hits a wall, it will die.
 
-
+<img width="250" alt="screen shot 2018-02-19 at 2 55 08 am" src="https://user-images.githubusercontent.com/12948431/36367561-3ae77b60-1521-11e8-81b9-09ff41ef7897.png">
 
 # Genetic Algorithm
 
