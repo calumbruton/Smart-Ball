@@ -12,6 +12,7 @@ public class MasterController : MonoBehaviour
 	public float time;
 	public float generation_time; //seconds until a new generation is forced
 	public Text gen_ui;
+	public Text highestFit_ui;
 
 	//Genetic Variables
 	private float[][] DNA;
@@ -83,6 +84,7 @@ public class MasterController : MonoBehaviour
 			gen_ui.text = "Generation: " + gen_num.ToString ();
 
 
+
 			//Get fitness scores
 			fitness_scores = new float[pop_size];
 			for (int i = 0; i < ball_pop.Count; i++) {
@@ -100,6 +102,8 @@ public class MasterController : MonoBehaviour
 				roulette.Add (roulette [i] + alloc);
 			}
 			roulette.Add(1);
+
+
 
 
 			//Use roulette selection to decide on parents -> parents are stored by their index
@@ -128,6 +132,7 @@ public class MasterController : MonoBehaviour
 				}
 			}
 			
+
 
 			//Create a new DNA array to keep childrens DNA
 			float [][] new_DNA = new float[pop_size][];
@@ -162,17 +167,22 @@ public class MasterController : MonoBehaviour
 			} // End of uniform crossover
 
 
+
 			//bring elites DNA forward
 			//Sort the fitness scores in a new array so index locations of original are intact
 			float [] sorted_fitness = new float[fitness_scores.Length];
 			Array.Copy (fitness_scores, sorted_fitness, fitness_scores.Length);
 			Array.Sort (sorted_fitness);
 
+			//Update the high fitness score UI
+			highestFit_ui.text = "Highest Fitness:  " + (sorted_fitness[sorted_fitness.Length-1]).ToString ();
+
+
 			//recover the location of the elites
 			int [] elite_locs = new int [elitism];
 			for (int i = 0; i < elitism; i++) {
 
-				//get the index of the elite from fitness scores, this is the same index as it's DNA
+				//get the index of the elites from fitness scores, this is the same index as it's DNA
 				int loc = Array.IndexOf(fitness_scores, sorted_fitness[(sorted_fitness.Length-1)-i]);
 
 				//print(sorted_fitness[(sorted_fitness.Length-1)-i] + "in location " + loc);
