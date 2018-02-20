@@ -1,6 +1,6 @@
 # Smart-Ball
 
-Smart Ball is a project in Unity that uses a neural network and a genetic algorithm to teach balls to safetly navigate a course. 
+Smart Ball is a project in Unity that uses a neural network and a genetic algorithm to teach balls to safely navigate a course. 
 
 <a href="https://imgflip.com/gif/24u5nl"><img src="https://i.imgflip.com/24u5nl.gif" title="made at imgflip.com"/></a>
 
@@ -12,7 +12,7 @@ The program starts by initializing x number of training balls. Each one of these
 <img width="250" alt="screen shot 2018-02-19 at 2 55 08 am" src="https://user-images.githubusercontent.com/12948431/36367561-3ae77b60-1521-11e8-81b9-09ff41ef7897.png">
 &nbsp;
 
-## Genetic Algorithm
+## The Genetic Algorithm
 
 The genetic algorithm used consisted of uniform DNA crossover, roulette parent selection, elitism and random mutation.
 
