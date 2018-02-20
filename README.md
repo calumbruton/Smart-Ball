@@ -3,7 +3,8 @@
 Smart Ball is a project in Unity that uses a neural network and a genetic algorithm to teach balls to safetly navigate a course. 
 
 <a href="https://imgflip.com/gif/24u5nl"><img src="https://i.imgflip.com/24u5nl.gif" title="made at imgflip.com"/></a>
-&nbsp;
+
+&nbsp;&nbsp;
 ## The Neural Network
 
 The program starts by initializing x number of training balls. Each one of these training balls is assigned a random DNA sequence (an array of values) where each value is used as a weight for a connections or bias in its neural network (Its brain). The neural network takes 5 distances as inputs by using raycasts that are sent from the ball it is assigned to. The distance is the minimum of the closest object hit and a user specified distance. These distances come from the left, forward-left, forward, forward-right, and right (picture below). Every frame the neural network of each ball will make a decision on the ball rotation based on these 5 inputs. If the ball hits a wall, it will die.
