@@ -12,7 +12,7 @@ The program starts by initializing x number of training balls. Each one of these
 
 ## Genetic Algorithm
 
-The genetic algorithm used consisted of uniform DNA crossover, roullette parent selection, elitism and random mutation.
+The genetic algorithm used consisted of uniform DNA crossover, roulette parent selection, elitism and random mutation.
 
 ### Fitness
 
@@ -21,7 +21,7 @@ To score a ball (and its DNA's performance) a fitness score was used that increa
 
 ### Parent Selection
 
-At the end of each generation the fitness scores of each ball are used to allocate each a portion of a roullette wheel that ranges from 0 to 1. A random number is then chosen in this range and the ball that it lands on is chosen as a parent. The second parent is chosen randomly and this set of parents produces two children.
+At the end of each generation the fitness scores of each ball are used to allocate each a portion of a roulette wheel that ranges from 0 to 1. A random number is then chosen in this range and the ball that it lands on is chosen as a parent. The second parent is chosen randomly and this set of parents produces two children.
 
 ### DNA Crossover
 
