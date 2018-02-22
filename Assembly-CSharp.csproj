@@ -51,11 +51,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Camera.cs" />
+     <Compile Include="Assets\Scripts\BuildMode.cs" />
+     <Compile Include="Assets\Scripts\CreateStartLine.cs" />
+     <Compile Include="Assets\Scripts\CreateWalls.cs" />
      <Compile Include="Assets\Scripts\MasterController.cs" />
      <Compile Include="Assets\Scripts\NN.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Rotator.cs" />
+     <Compile Include="Assets\Scripts\StartTraining.cs" />
      <Compile Include="Assets\Scripts\TrainingBallController.cs" />
      <Compile Include="Assets\Scripts\Wall_Death.cs" />
  <Reference Include="UnityEngine.UI">

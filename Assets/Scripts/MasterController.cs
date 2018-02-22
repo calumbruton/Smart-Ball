@@ -179,7 +179,6 @@ public class MasterController : MonoBehaviour
 
 
 			//recover the location of the elites
-			int [] elite_locs = new int [elitism];
 			for (int i = 0; i < elitism; i++) {
 
 				//get the index of the elites from fitness scores, this is the same index as it's DNA

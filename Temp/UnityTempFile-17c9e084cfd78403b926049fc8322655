@@ -180,12 +180,14 @@
 -define:UNITY_TEAM_LICENSE
 -define:CROSS_PLATFORM_INPUT
 'Assets/Scripts/Camera.cs'
+'Assets/Scripts/CreateWalls.cs'
 'Assets/Scripts/MasterController.cs'
 'Assets/Scripts/NN.cs'
 'Assets/Scripts/PlayerController.cs'
 'Assets/Scripts/Rotator.cs'
 'Assets/Scripts/TrainingBallController.cs'
 'Assets/Scripts/Wall_Death.cs'
+'Assets/WallBuildButton.cs'
 -r:'/Applications/Unity/Unity.app/Contents/Mono/lib/mono/unity/System.Runtime.Serialization.dll'
 -r:'/Applications/Unity/Unity.app/Contents/Mono/lib/mono/unity/System.Xml.Linq.dll'
 -r:'/Applications/Unity/Unity.app/Contents/Mono/lib/mono/unity/UnityScript.dll'
