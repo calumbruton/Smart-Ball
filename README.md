@@ -27,7 +27,7 @@ At the end of each generation the fitness scores of each ball are used to alloca
 
 ### DNA Crossover
 
-The DNA of parents is combined into children using uniform crossover. For each index location in the DNA Array's one of the parents DNA is allocated to one child and the other is allocated to the other child based on random 50/50 chance. 
+The DNA of parents is combined into children using uniform crossover. For each index location in the children's DNA Arrays one of the parents DNA is allocated to one child and the other is allocated to the other child based on random 50/50 chance. 
 
 ### Mutation
 
@@ -35,5 +35,5 @@ A mutation will occur on a random number of balls DNA based on a user defined pe
 
 ### Elitism
 
-To avoid losing strong DNA sequences, elitism was introduced. This transfers the top y number of fitest balls DNA sequences to the next generation. When running the program I used 10% elitism, or 6 out of a population size of 60 balls. Mutation was not used on these balls.
+To avoid losing strong DNA sequences, elitism was introduced. This transfers the top y number of fittest balls DNA sequences to the next generation. When running the program I used 10% elitism, or 6 out of a population size of 60 balls. Mutation was not used on these balls.
 
