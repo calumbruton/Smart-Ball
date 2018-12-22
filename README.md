@@ -14,7 +14,7 @@ The program starts by initializing x number of training balls. Each one of these
 
 ## The Genetic Algorithm
 
-The genetic algorithm used consisted of uniform DNA crossover, roulette parent selection, elitism and random mutation.
+The genetic algorithm used uniform DNA crossover, roulette parent selection, elitism and random mutation.
 
 ### Fitness
 
